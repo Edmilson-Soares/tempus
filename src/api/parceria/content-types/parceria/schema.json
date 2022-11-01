@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "parcerias",
+  "info": {
+    "singularName": "parceria",
+    "pluralName": "parcerias",
+    "displayName": "Parcerias"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

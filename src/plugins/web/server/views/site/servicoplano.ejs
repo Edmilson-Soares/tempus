@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<!-- about32:03-->
+
+<%- include('head/head.ejs'); %>
+
+    <body>
+
+        <div class="page-wrapper">
+
+
+
+            <!-- Main Header-->
+            <%- include('header/header_servico.ejs'); %>
+                <!--End Main Header -->
+
+                <!--Page Title-->
+                <section class="page-title" style="background-image:url(/images/background/1.jpg);">
+                    <div class="auto-container">
+                        <h2>
+                            <%= plano.nome %>
+                        </h2>
+                    </div>
+                </section>
+
+                <!--Breadcrumb-->
+                <div class="breadcrumb-outer">
+                    <div class="auto-container">
+                        <ul class="bread-crumb text-center">
+                            <li><a href="/">Início</a> <span class="fa fa-angle-right"></span></li>
+                            <li><a href="/servicos">Serviços </a><span class="fa fa-angle-right"></span></li>
+                            <li>
+                                <%= plano.nome %>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--End Page Title-->
+
+
+
+                <!--About Section-->
+                <section class="about-section">
+                    <div class="auto-container">
+                        <div class="row clearfix">
+
+                            <!--Content Column-->
+                            <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                                <div class="inner-column">
+                                    <div class="sec-title">
+                                        <h2> Serviço para o Programa de Estimulação TEMPUS</h2>
+                                    </div>
+                                    <div class="text">
+
+                                        <p>
+                                            <%= plano.texto_p1 %>
+                                        </p>
+                                        <p>
+                                            <%= plano.texto_p2 %>
+                                        </p>
+                                        <button type="submit" class="theme-btn btn-style-one"><%= plano.preco %></button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Video Column-->
+                            <div class="video-column col-lg-6 col-md-12 col-sm-12">
+                                <div class="inner-column">
+
+                                    <!--Video Box-->
+                                    <div class="video-box">
+                                        <figure class="image">
+                                            <img src="/images/resource/video-img.jpg" alt="">
+                                        </figure>
+                                        <a href="https://www.youtube.com/watch?v=kxPCFljwJws" class="lightbox-image overlay-box"><span class="flaticon-arrow"></span></a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <!--End About Section-->
+
+                <!--Subscribe Style One-->
+                <%- include('Inscreva-se/inscrever.ejs'); %>
+                    <!--End Subscribe Style One-->
+
+                    <!--Main Footer-->
+                    <div class="bottom-parallax">
+                        <%- include('footer/footer.ejs'); %>
+                    </div>
+
+        </div>
+        <!--End pagewrapper-->
+
+
+        <script src="/js/jquery.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="/js/jquery.fancybox.js"></script>
+        <script src="/js/appear.js"></script>
+        <script src="/js/owl.js"></script>
+        <script src="/js/wow.js"></script>
+        <script src="/js/slick.js"></script>
+        <script src="/js/jquery-ui.js"></script>
+        <script src="/js/script.js"></script>
+
+        <!--Google Map APi Key-->
+        <script src="http://maps.google.com/maps/api/js?key=AIzaSyD39_Mb1wKUcuRD-0KPmQT6SQHhEMVX1O0"></script>
+        <script src="/js/map-script.js"></script>
+        <!--End Google Map APi-->
+
+        <script src="/js/color-settings.js"></script>
+
+    </body>
+
+    <!-- about32:11-->
+
+</html>

@@ -1,0 +1,100 @@
+{
+  "kind": "collectionType",
+  "collectionName": "utentesss",
+  "info": {
+    "singularName": "utente",
+    "pluralName": "utentes",
+    "displayName": "utente",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "rfid": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "caracteristica": {
+      "type": "richtext"
+    },
+    "img": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "f1": {
+      "type": "string"
+    },
+    "f2": {
+      "type": "string"
+    },
+    "f3": {
+      "type": "string"
+    },
+    "f4": {
+      "type": "string"
+    },
+    "f5": {
+      "type": "string"
+    },
+    "f6": {
+      "type": "string"
+    },
+    "f7": {
+      "type": "string"
+    },
+    "f8": {
+      "type": "string"
+    },
+    "f9": {
+      "type": "string"
+    },
+    "f10": {
+      "type": "string"
+    },
+    "f11": {
+      "type": "string"
+    },
+    "f": {
+      "type": "string"
+    },
+    "data": {
+      "type": "date"
+    },
+    "genero": {
+      "type": "string"
+    },
+    "arquivar": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "testes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::teste.teste",
+      "mappedBy": "utente"
+    },
+    "instituicao": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::instituicao.instituicao",
+      "inversedBy": "utentes"
+    },
+    "observacaos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::observacao.observacao",
+      "mappedBy": "utente"
+    }
+  }
+}

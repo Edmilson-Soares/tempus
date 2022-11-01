@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<!-- services32:39-->
+
+<%- include('head/head.ejs'); %>
+
+    <body>
+
+        <div class="page-wrapper">
+
+            <!-- Main Header-->
+            <%- include('header/header_servico.ejs'); %>
+                <!--End Main Header -->
+
+                <!--FullScreen Menu-->
+
+                <!--End FullScreen Menu-->
+
+                <!--Page Title-->
+                <section class="page-title" style="background-image:url(images/background/2.jpg);">
+                    <div class="auto-container">
+                        <h2>Serviços</h2>
+                    </div>
+                </section>
+
+                <!--Breadcrumb-->
+                <div class="breadcrumb-outer">
+                    <div class="auto-container">
+                        <ul class="bread-crumb text-center">
+                            <li><a href="/">Início</a> <span class="fa fa-angle-right"></span></li>
+                            <li>Serviços</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--End Page Title-->
+
+                <!-- Services Section-->
+                <section class="services-section">
+                    <div class="auto-container">
+                        <!--Title Box-->
+                        <div class="title-box">
+                            <div class="row clearfix">
+                                <div class="column col-lg-4 col-md-12 col-sm-12">
+                                    <h3>NÓS OFERECEMOS<br> DIFERENTES SERVIÇOS</h3>
+                                </div>
+                                <div class="column col-lg-8 col-md-12 col-sm-12">
+                                    <div class="text">O tempo é muito importante, por mais que ele passe rápido, podemos aproveitar os momentos importantes com as pessoas que amamos. Deste modo temos muitas ferramentas do seu interresse, verifique os nossos serviços.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+
+                            <% planos.forEach(function(plano) { %>
+                                <div class="services-block-two col-lg-4 col-md-6 col-sm-12">
+                                    <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                        <div class="image-box">
+                                            <img src="<%= plano.img?plano.img.url:'images/resource/services-1.jpg' %>" alt="" />
+                                        </div>
+                                        <!--Lower Box-->
+                                        <div class="lower-box">
+                                            <div class="icon-box">
+                                                <div class="icon flaticon-profits"></div>
+                                            </div>
+                                            <h3>
+                                                <%= plano.nome %>
+                                            </h3>
+                                        </div>
+
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box" style="background-image:url(images/resource/services-1.jpg)">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <div class="icon flaticon-profits"></div>
+                                                    <h6>
+                                                        <a href="<%='/servico/'+plano.id %>">
+                                                            <%= plano.nome %>
+                                                        </a>
+                                                    </h6>
+                                                    <div class="text">
+                                                        <%= plano.descricao %>
+                                                    </div>
+                                                    <a href="<%='/servico/'+plano.id %>" class="theme-btn btn-style-three">Ler mais</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <% }); %>
+
+                                    <!--Services Block Two-->
+
+
+                        </div>
+
+                        <!--Styled Pagination-->
+                        <ul class="styled-pagination text-center">
+                            <li class="prev"><a href="#"><span class="fa fa-angle-left"></span></a></li>
+                            <li>
+                                <a href="#" class="active">TEMPUS</a>
+                            </li>
+                            <li class="next"><a href="#"><span class="fa fa-angle-right"></span></a></li>
+                        </ul>
+                        <!--End Styled Pagination-->
+
+                    </div>
+                </section>
+                <!--End Market Section-->
+
+                <!--Subscribe Style One-->
+                <%- include('Inscreva-se/inscrever.ejs'); %>
+                    <!--End Subscribe Style One-->
+
+                    <!--Main Footer-->
+                    <div class="bottom-parallax">
+                        <%- include('footer/footer.ejs'); %>
+                    </div>
+
+        </div>
+        <!--End pagewrapper-->
+
+
+        <script src="js/jquery.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/jquery.fancybox.js"></script>
+        <script src="js/appear.js"></script>
+        <script src="js/owl.js"></script>
+        <script src="js/wow.js"></script>
+        <script src="js/slick.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/color-settings.js"></script>
+
+    </body>
+
+    <!-- services32:51-->
+
+</html>

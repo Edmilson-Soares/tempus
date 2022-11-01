@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "galerias",
+  "info": {
+    "singularName": "galeria",
+    "pluralName": "galerias",
+    "displayName": "galeria",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "tipo_de_galeria": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tipo-de-galeria.tipo-de-galeria",
+      "inversedBy": "galerias"
+    },
+    "nome": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "richtext"
+    }
+  }
+}

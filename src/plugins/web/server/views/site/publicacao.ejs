@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<!-- services32:39-->
+
+<%- include('head/head.ejs'); %>
+
+    <body>
+
+        <div class="page-wrapper">
+
+
+
+            <!-- Main Header-->
+            <%- include('header/header_publicacao.ejs'); %>
+                <!--End Main Header -->
+
+                <!--FullScreen Menu-->
+
+                <!--End FullScreen Menu-->
+
+                <!--Page Title-->
+                <section class="page-title" style="background-image:url(images/background/2.jpg);">
+                    <div class="auto-container">
+                        <h2>Publicações</h2>
+                    </div>
+                </section>
+
+                <!--Breadcrumb-->
+                <div class="breadcrumb-outer">
+                    <div class="auto-container">
+                        <ul class="bread-crumb text-center">
+                            <li><a href="/">Início</a> <span class="fa fa-angle-right"></span></li>
+                            <li>Publicações</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--End Page Title-->
+
+                <!--News Section-->
+                <section class="news-section">
+                    <div class="auto-container">
+                        <!--Sec Title-->
+                        <div class="sec-title centered">
+                            <h2>Publicidade TEMPUS</h2>
+                        </div>
+
+                        <div class="row clearfix">
+
+
+                            <% publicacoes.forEach(function(publicacao) { %>
+                                <div class="news-block col-lg-4 col-md-6 col-sm-12">
+                                    <div class="inner-box">
+                                        <div class="image">
+                                            <a href="<%= '/publicacoes/'+publicacao.id %> "><img src="<%= publicacao.fotos.length>0?publicacao.fotos[0].url:'/images/resource/news-1.jpg' %>" alt="" /></a>
+                                            <ul class="category">
+                                                <li><a href="<%= '/publicacoes/'+publicacao.id %> ">Initiative, </a></li>
+                                                <li><a href="<%= '/publicacoes/'+publicacao.id %> ">Programs</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="lower-content">
+                                            <div class="author">
+                                                <%= publicacao.autor %>
+                                            </div>
+                                            <h5>
+                                                <a href="<%= '/publicacoes/'+publicacao.id %> ">
+                                                    <%= publicacao.titulo %>
+                                                </a>
+                                            </h5>
+                                            <div class="text">
+                                                <%= publicacao.text %>
+                                            </div>
+                                            <ul class="post-date">
+                                                <li>14th August, 2019</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }); %>
+
+                                    <!--News Block-->
+
+
+                        </div>
+
+                    </div>
+                </section>
+                <!--End News Section-->
+
+                <!--Subscribe Style One-->
+                <%- include('Inscreva-se/inscrever.ejs'); %>
+                    <!--End Subscribe Style One-->
+
+                    <!--Main Footer-->
+                    <div class="bottom-parallax">
+                        <%- include('footer/footer.ejs'); %>
+                    </div>
+
+        </div>
+        <!--End pagewrapper-->
+
+
+        <script src="js/jquery.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/jquery.fancybox.js"></script>
+        <script src="js/appear.js"></script>
+        <script src="js/owl.js"></script>
+        <script src="js/wow.js"></script>
+        <script src="js/slick.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/color-settings.js"></script>
+
+    </body>
+
+    <!-- services32:51-->
+
+</html>

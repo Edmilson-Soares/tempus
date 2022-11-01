@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "instituicoes",
+  "info": {
+    "singularName": "instituicao",
+    "pluralName": "instituicoes",
+    "displayName": "instituicao",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "richtext"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ferramentas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ferramenta.ferramenta",
+      "inversedBy": "instituicoes"
+    },
+    "utentes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::utente.utente",
+      "mappedBy": "instituicao"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "instituicao"
+    },
+    "testes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::teste.teste",
+      "mappedBy": "instituicao"
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

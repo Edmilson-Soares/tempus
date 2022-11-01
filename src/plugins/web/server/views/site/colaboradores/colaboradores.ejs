@@ -1,0 +1,47 @@
+<!--Team Section-->
+<section class="team-section">
+    <div class="auto-container">
+        <!--Sec Title-->
+        <div class="sec-title centered">
+            <h2>Colaboradores TEMPUS</h2>
+        </div>
+
+        <div class="row clearfix">
+
+
+            <% colaboradores.forEach(function(colaborador) { %>
+                <div class="team-member col-lg-3 col-md-6 col-sm-12">
+                    <div class="inner-box wow fadeIn" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <div class="image-box">
+                            <figure class="image"><img src="<%= colaborador.foto?colaborador.foto.url:'/assets/img/AddedSolutions.jpg' %>" alt=""></figure>
+                            <ul class="social-icon-two">
+                                <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
+                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="lower-content">
+                            <h6>
+                                <a href="team-single.html">
+                                    <%= colaborador.nome %>
+                                </a>
+                            </h6>
+                            <div class="designation">
+                                <%= colaborador.funcao %>
+                            </div>
+                            <div class="text">
+                                <%= colaborador.descricao %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+
+
+
+        </div>
+
+    </div>
+</section>
+<!--End Team Section-->

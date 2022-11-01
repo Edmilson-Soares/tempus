@@ -1,0 +1,77 @@
+<header class="main-header header-style-two">
+
+    <%- include('headertop/top.ejs'); %>
+
+
+
+        <!--Header Lower-->
+        <div class="header-lower">
+
+            <div class="auto-container">
+                <div class="nav-outer clearfix">
+                    <!-- Main Menu -->
+                    <nav class="main-menu navbar-expand-md">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                          </button>
+                        </div>
+
+                        <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+                            <ul class="navigation clearfix">
+                                <li><a href="/">Início</a></li>
+                                <li class="dropdown"><a href="#">Tempus</a>
+                                    <ul>
+                                        <li><a href="/sobre">Sobre Nós</a></li>
+                                        <li><a href="/sobre/programas">Programas</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="/servicos">Serviços</a></li>
+                                <li class="current"><a href="/galerias">Galerias</a>
+                                </li>
+                                <li><a href="/publicacoes">Publicações</a></li>
+                                <li><a href="/">Addedsolutions</a></li>
+                                <li><a href="/contatos">Contatos</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <!-- Main Menu End-->
+
+                    <!-- Main Menu End-->
+                    <div class="outer-box clearfix">
+                        <!--Option Box-->
+                        <div class="option-box">
+                            <!--Cart Box-->
+
+
+                            <!--Search Box-->
+                            <div class="search-box-outer">
+                                <div class="dropdown">
+                                    <% if(data){ %>
+                                        <a href="/instituicao" class="search-box-btn dropdown-toggle"><span class="fa fa-user"></span> Entrar</a>
+
+                                        <% } else{ %>
+                                            <a href="/auth/login" class="search-box-btn dropdown-toggle"><span class="fa fa-user"></span> Login</a>
+
+                                            <% } %>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="side-curve"></div>
+                </div>
+            </div>
+        </div>
+        <!--End Header Lower-->
+
+
+
+</header>

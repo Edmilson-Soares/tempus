@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "colaboradores",
+  "info": {
+    "singularName": "colaborador",
+    "pluralName": "colaboradores",
+    "displayName": "Colaboradores"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "richtext"
+    },
+    "funcao": {
+      "type": "string"
+    },
+    "foto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

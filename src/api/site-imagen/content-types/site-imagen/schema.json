@@ -1,0 +1,45 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_imagens",
+  "info": {
+    "singularName": "site-imagen",
+    "pluralName": "site-imagens",
+    "displayName": "site_imagens"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pagina_inicio_programa_estimulacao": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "pagina_inicio_ferramenta_estimulacao": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "pagina_inicio_colaboradores_fundo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

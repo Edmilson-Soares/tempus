@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<!-- gallery32:59-->
+
+<%- include('head/head.ejs'); %>
+
+    <body>
+
+        <div class="page-wrapper">
+
+
+            <!-- Main Header-->
+            <%- include('header/header_galeria.ejs'); %>
+                <!--End Main Header -->
+
+
+                <!--Page Title-->
+                <section class="page-title" style="background-image:url(images/background/2.jpg);">
+                    <div class="auto-container">
+                        <h2>Galerias</h2>
+                    </div>
+                </section>
+
+                <!--Breadcrumb-->
+                <div class="breadcrumb-outer">
+                    <div class="auto-container">
+                        <ul class="bread-crumb text-center">
+                            <li><a href="/">Início</a> <span class="fa fa-angle-right"></span></li>
+                            <li>Galerias</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--End Page Title-->
+
+                <!--Cases Section-->
+                <section class="case-page-section">
+                    <div class="auto-container">
+                        <div class="sec-title centered">
+                            <h2>Nossa última galeria</h2>
+                            <div class="text">Dê uma olhada em nossos trabalhos anteriores e não hesite em começar a trabalhar conosco. Criamos <br> soluções de hoje, que transcendem as tendências de amanhã.</div>
+                        </div>
+
+                        <!--MixitUp Galery-->
+                        <div class="mixitup-gallery">
+
+                            <!--Filter-->
+                            <div class="filters clearfix">
+
+                                <ul class="filter-tabs filter-btns text-center clearfix">
+                                    <li class="active filter" data-role="button" data-filter="all">All</li>
+                                    <% types.forEach(function(type) { %>
+                                        <li class="filter" data-role="button" data-filter="<%= '.'+type.nome %>">
+                                            <%=type.nome  %>
+                                        </li>
+                                        <% }); %>
+
+
+
+                                </ul>
+
+                            </div>
+
+                            <div class="filter-list row clearfix">
+
+
+
+
+                                <% types.forEach(function(type) { %>
+
+                                    <% type.galerias.forEach(function(galeria) { %>
+                                        <div class="<%= 'case-block mix '+type.nome+' col-lg-6 col-md-6 col-sm-12' %>">
+                                            <div class="inner-box">
+                                                <div class="image">
+                                                    <img src="<%= galeria.images.length>0?galeria.images[0].url:'/images/resource/case-5.jpg' %>" alt="" />
+                                                    <div class="overlay-box">
+                                                        <div class="overlay-inner">
+                                                            <div class="content">
+                                                                <h3>
+                                                                    <a href="#">
+                                                                        <%= galeria.nome %>
+                                                                    </a>
+                                                                </h3>
+                                                                <div class="text">
+                                                                    <%= galeria.descricao %>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% }); %>
+
+                                            <% }); %>
+
+                                                <!--Case block-->
+
+
+
+                            </div>
+                        </div>
+
+                        <!--Styled Pagination-->
+                        <ul class="styled-pagination text-center">
+                            <li class="prev"><a href="#"><span class="fa fa-angle-left"></span></a></li>
+                            <li><a href="#" class="active">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li class="next"><a href="#"><span class="fa fa-angle-right"></span></a></li>
+                        </ul>
+                        <!--End Styled Pagination-->
+
+                    </div>
+                </section>
+                <!--End Cases Section-->
+
+                <!--Subscribe Style One-->
+                <%- include('Inscreva-se/inscrever.ejs'); %>
+                    <!--End Subscribe Style One-->
+
+                    <!--Main Footer-->
+                    <div class="bottom-parallax">
+                        <%- include('footer/footer.ejs'); %>
+                    </div>
+
+        </div>
+        <!--End pagewrapper-->
+
+
+        <script src="js/jquery.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/jquery.fancybox.js"></script>
+        <script src="js/appear.js"></script>
+        <script src="js/mixitup.js"></script>
+        <script src="js/owl.js"></script>
+        <script src="js/wow.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/color-settings.js"></script>
+
+    </body>
+
+    <!-- gallery33:24-->
+
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- datatables.html  21 Nov 2019 03:55:21 GMT -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Tempus</title>
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="/assets/bundles/datatables/datatables.min.css">
+    <link rel="stylesheet" href="/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <link rel='shortcut icon' type='image/x-icon' href='/assets/img/AddedSolutions.jpg' />
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar sticky">
+                <div class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3">
+                        <li>
+                            <a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
+									collapse-btn"> <i data-feather="align-justify"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link nav-link-lg fullscreen-btn">
+                                <i data-feather="maximize"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <ul class="navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="<%= user.foto?user.foto.url:'/assets/img/AddedSolutions.jpg'%>" class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
+                        <div class="dropdown-menu dropdown-menu-right pullDown">
+                            <div class="dropdown-title">
+                                <%= user.username %>
+                            </div>
+                            <a href="/dashboard/perfil" class="dropdown-item has-icon"> <i class="far
+										fa-user"></i> perfil
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/web/auth/logout" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="main-sidebar sidebar-style-2">
+                <aside id="sidebar-wrapper">
+                    <div class="sidebar-brand">
+                        <a href="/"> <img alt="image" src="/assets/img/AddedSolutions.jpg" class="header-logo" /> <span class="logo-name">tempus</span>
+                        </a>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li class="menu-header">Main</li>
+
+                        <li class="dropdown active">
+                            <a href="/dashboard" class="nav-link"><i data-feather="users"></i><span>INSTITUIÇÕES</span></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/dashboard/perfil" class="nav-link"><i data-feather="user"></i><span>PERFIL</span></a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <!-- Main Content -->
+            <div class="main-content">
+                <section class="section" style="margin-top: -30px;">
+                    <div class="section-body">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between align-center">
+                                        <h4>Instituições</h4>
+                                        <a href="#" data-toggle="modal" data-target="#add" class="btn btn-primary">Adicionar</a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped" id="instituicoes">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center pt-3">
+                                                            ID
+                                                        </th>
+                                                        <th>Nome</th>
+                                                        <th>Logo</th>
+                                                        <th>Descrições</th>
+                                                        <th>Nome do Cliente</th>
+                                                        <th>Contato do Cliente</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody style="cursor: pointer;">
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="formModal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title mr-4" id="formModal">Instituições</h5>
+                                <div>
+
+                                    <a v-if="instituicao.blocked" href="#" @click="desbloquear" class="btn btn-outline-danger mr-2">Desbloquear Acesso</a>
+                                    <a v-else href="#" @click="bloquear" class="btn btn-outline-danger mr-2">Bloquear Acesso</a>
+                                    <a href="#" @click="update" class="btn btn-success mr-2">Salvar</a>
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                                </div>
+
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+
+                                    <div class="form-group col-6">
+                                        <label class="modal-title mr-4" id="formModal">Nome da Instituição</label>
+                                        <p>{{instituicao.nome}}</p>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="modal-title mr-4" id="formModal">Descriçãos da Instituição</label>
+                                        <p>
+                                            {{instituicao.descricao}}
+                                        </p>
+                                    </div>
+
+
+                                    <hr style="width:100%;text-align:left;margin-left:0">
+
+                                    <div class="form-group col-6">
+                                        <label class="modal-title mr-4" id="formModal">Nome da Cliente</label>
+                                        <p>{{instituicao?.users[0]?.nome}}</p>
+
+                                    </div>
+                                    <div class="form-group col-6">
+
+                                        <label class="modal-title mr-4" id="formModal">Contato do Cliente</label>
+                                        <p>{{instituicao?.users[0]?.contacto}}</p>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="modal-title mr-4" id="formModal">Email do Cliente</label>
+                                        <p>{{instituicao?.users[0]?.email}}</p>
+
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="modal-title mr-4" id="formModal">Morada do Cliente</label>
+                                        <p>{{instituicao?.users[0]?.morada}}</p>
+
+                                    </div>
+
+                                </div>
+
+                                <label>Ferramentas</label>
+                                <select class="form-control" v-model="instituicao.ferrs" multiple="" data-height="100%">
+                                  <option v-for="fer in ferramentas" :value="fer.id" >{{fer.nome}}</option>
+                                </select>
+
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="formModal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title mr-4" id="formModal">Instituições</h5>
+                                <div>
+
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                                </div>
+
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+
+                                    <div class="form-group col-12">
+                                        <label>Nome da Instituição</label>
+                                        <input type="text" class="form-control" v-model="instituicao_add.nome">
+                                    </div>
+
+                                    <label>Ferramentas</label>
+                                    <select v-model="instituicao_add.ferrs" class="form-control" multiple="" data-height="100%">
+                                      <option v-for="fer in ferramentas" :value="fer.id" >{{fer.nome}}</option>
+                                    </select>
+
+
+
+                                    <hr style="width:100%;text-align:left;margin-left:0">
+
+                                    <div class="form-group col-6">
+                                        <label>Email do Cliente</label>
+                                        <input type="email" class="form-control" v-model="instituicao_add.email">
+                                    </div>
+
+                                    <div class="form-group col-6">
+                                        <label>Nome do Cliente</label>
+                                        <input type="text" class="form-control" v-model="instituicao_add.nome_">
+                                    </div>
+
+
+                                </div>
+
+                                <button type="button" @click="add($event)" class="btn btn-primary m-t-15 waves-effect w-100">Adicionar</button>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+            <footer class="main-footer">
+                <div class="footer-left">
+                    <a href="templateshub.net">Templateshub</a></a>
+                </div>
+                <div class="footer-right">
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- General JS Scripts -->
+    <script src="/assets/js/app.min.js"></script>
+    <!-- JS Libraies -->
+    <script src="/assets/bundles/datatables/datatables.min.js"></script>
+    <script src="/assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/assets/bundles/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Page Specific JS File -->
+    <!-- Template JS File -->
+    <script src="/assets/js/scripts.js"></script>
+    <!-- Custom JS File -->
+    <script src="/assets/js/custom.js"></script>
+
+    <script src="/assets/bundles/sweetalert/sweetalert.min.js"></script>
+    <!-- Page Specific JS File -->
+    <script src="/assets/js/page/sweetalert.js"></script>
+    <script src="/assets/js/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+    <script src="/assets/js/axios.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        let instituicoes = '<%- JSON.stringify(instituicoes) %>'
+        let ferramentas = '<%- JSON.stringify(ferramentas) %>'
+        let jwt = '<%= jwt%>'
+        instituicoes = JSON.parse(instituicoes)
+        ferramentas = JSON.parse(ferramentas)
+        console.log(instituicoes, ferramentas)
+    </script>
+    <script src="/assets/js/tempus/inst.admin.js"></script>
+</body>
+
+
+<!-- datatables.html  21 Nov 2019 03:55:25 GMT -->
+
+</html>

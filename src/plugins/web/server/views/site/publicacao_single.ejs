@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<!-- services32:39-->
+
+<%- include('head/head.ejs'); %>
+
+    <body>
+
+        <div class="page-wrapper">
+
+
+
+            <!-- Main Header-->
+            <%- include('header/header_publicacao.ejs'); %>
+                <!--End Main Header -->
+
+                <!--FullScreen Menu-->
+
+                <!--End FullScreen Menu-->
+
+                <!--Page Title-->
+                <section class="page-title" style="background-image:url(images/background/2.jpg);">
+                    <div class="auto-container">
+                        <h2>Publicações</h2>
+                    </div>
+                </section>
+
+                <!--Breadcrumb-->
+                <div class="breadcrumb-outer">
+                    <div class="auto-container">
+                        <ul class="bread-crumb text-center">
+                            <li><a href="/">Início</a> <span class="fa fa-angle-right"></span></li>
+                            <li>Publicações</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--End Page Title-->
+
+                <!--News Section-->
+                <section class="news-section">
+                    <div class="auto-container">
+                        <!--Sec Title-->
+                        <div class="sec-title centered">
+                            <h2>Publicidade TEMPUS</h2>
+                        </div>
+
+                        <div class="row clearfix">
+
+                            <div class="content-side col-lg-12 col-md-12 col-sm-12">
+                                <!--Blog Single-->
+                                <div class="blog-single">
+                                    <div class="inner-box">
+                                        <div class="image">
+                                            <img src="<%= publicacao.fotos.length>0?publicacao.fotos[0].url:'/images/resource/news-1.jpg' %>" alt="" />
+                                        </div>
+                                        <div class="lower-content">
+                                            <h6>
+                                                <%= publicacao.titulo %>
+                                            </h6>
+                                            <ul class="post-meta">
+                                                <li><span class="icon fa fa-user"></span>Vicky</li>
+                                                <li><span class="icon fa fa-eye"></span>32 Views</li>
+                                                <li><span class="icon fa fa-calendar"></span>21 Aug 2016</li>
+                                            </ul>
+                                            <div class="text">
+                                                <p>
+                                                    <%= publicacao.text %>
+                                                </p>
+
+                                            </div>
+                                            <!--post-share-options-->
+                                            <div class="post-share-options clearfix">
+                                                <div class="pull-left">
+                                                    <ul class="social-icon-three">
+                                                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                                        <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
+                                                        <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="pull-right social-icon-three clearfix">
+                                                    <div class="new-posts">
+                                                        <a class="prev" href="#"><span class="icon fa fa-angle-left"></span>&ensp;Prev</a>
+                                                        <a class="next" href="#">Next&ensp;<span class="icon fa fa-angle-right"></span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Author Box-->
+                                <div class="author-box">
+                                    <h4>About Author</h4>
+                                    <div class="author-comment">
+                                        <div class="inner-box">
+                                            <div class="image">
+                                                <img src="<%= publicacao.fotos.length>0?publicacao.fotos[0].url:'/images/resource/news-1.jpg' %>" alt="" />
+                                            </div>
+                                            <h3>
+                                                <%= publicacao.autor %>
+                                            </h3>
+                                            <div class="text">We will give you complete account of the system, and expound the actual teaching the great explorer of the truth, the master-builder of human happiness.</div>
+                                            <ul class="social-icon-one">
+                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-youtube"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+                <!--End News Section-->
+
+                <!--Subscribe Style One-->
+                <%- include('Inscreva-se/inscrever.ejs'); %>
+                    <!--End Subscribe Style One-->
+
+                    <!--Main Footer-->
+                    <div class="bottom-parallax">
+                        <%- include('footer/footer.ejs'); %>
+                    </div>
+
+        </div>
+        <!--End pagewrapper-->
+
+
+        <script src="js/jquery.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/jquery.fancybox.js"></script>
+        <script src="js/appear.js"></script>
+        <script src="js/owl.js"></script>
+        <script src="js/wow.js"></script>
+        <script src="js/slick.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/color-settings.js"></script>
+
+    </body>
+
+    <!-- services32:51-->
+
+</html>
